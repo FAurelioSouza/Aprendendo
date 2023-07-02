@@ -1,27 +1,45 @@
 import pyautogui
 import time
-import keyboard
 import random
 
 #imagem = './alchy.png'
-imagem = './skillAlchy.png'
+#imagem = './skillAlchy.png'
 axe = './axe.png'
 dagger = './runedagger.png'
 scimitar = './steelscimitar.png'
 cannon = './reload.png'
 safespot = './safespot.png'
 
-alch1 = './alch1.png'
+#alch1 = './alch1.png'
 alch2 = './alch2.png'
 alch3 = './alch3.png'
 
-arrow = './arrowsM.png'
-pena = './pena.png'
 
-logNote = './log.png'
-log = './logg.png'
+imagem = './outropc/skillalchy.png'
+alch1 = './outropc/alchy.png'
+
+#arrow = './arrowsM.png'
+#pena = './pena.png'
+
+
+arrow = './outropc/arrowsM.png'
+pena = './outropc/pena.png'
+
+
+#logNote = './log.png'
+#log = './logg.png'
+#bank = './bank.png'
+#knif = './knif.png'
+
+logNote = './outropc/logNote.png'
+log = './outropc/log.png'
 bank = './bank.png'
-knif = './knif.png'
+knif = './outropc/knif.png'
+bow = './outropc/longbow.png'
+bowfull = './outropc/longbowFULL.png'
+stringbow = './outropc/stringbow.png'
+yew = './outropc/yewlog.png'
+close = './outropc/close.png'
 
 def highAlchemy():
     pause = 1
@@ -35,14 +53,14 @@ def highAlchemy():
             pyautogui.moveTo(valorCenter[0], valorCenter[1], 0.3, logScreenshot=False)
             pyautogui.click()
 
-            if pyautogui.locateOnScreen(alch1, confidence=0.5):
-                valor = pyautogui.locateOnScreen(alch1, confidence=0.5)
+            if pyautogui.locateOnScreen(alch1, confidence=0.7):
+                valor = pyautogui.locateOnScreen(alch1, confidence=0.7)
                 valorCenter = pyautogui.center((valor[0], valor[1],valor[2], valor[3]))
                 pyautogui.moveTo(valorCenter[0], valorCenter[1], 0.3, logScreenshot=False)
                 pyautogui.click()
                 time.sleep(0.7)
-            elif pyautogui.locateOnScreen(alch2, confidence=0.5):
-                valor = pyautogui.locateOnScreen(alch2, confidence=0.5)
+            elif pyautogui.locateOnScreen(alch2, confidence=0.6):
+                valor = pyautogui.locateOnScreen(alch2, confidence=0.6)
                 valorCenter = pyautogui.center((valor[0], valor[1],valor[2], valor[3]))
                 pyautogui.moveTo(valorCenter[0], valorCenter[1], 0.3, logScreenshot=False)
                 pyautogui.click()
@@ -117,8 +135,8 @@ def fletchingFeather():
                 time.sleep(0.7)
                 pyautogui.press('space')
                 time.sleep(10.5)
-            else:
-                pause = 0
+            else: 
+                pause = 1
         else:
             print("Não encontrou os items")
             pause = 0
@@ -144,8 +162,8 @@ def fletchingLOG():
                 time.sleep(0.9)
                 pyautogui.press('1')
                 time.sleep(0.7)
-                if pyautogui.locateOnScreen(knif, confidence=0.6):
-                    valor = pyautogui.locateOnScreen(knif, confidence=0.6)
+                if pyautogui.locateOnScreen(knif, confidence=0.7):
+                    valor = pyautogui.locateOnScreen(knif, confidence=0.7)
                     valorCenter = pyautogui.center((valor[0], valor[1],valor[2], valor[3]))
                     pyautogui.moveTo(valorCenter[0], valorCenter[1], 0.3, logScreenshot=False)
                     pyautogui.click()
@@ -168,4 +186,128 @@ def fletchingLOG():
             pause = 0
             time.sleep(0.7)
 
-fletchingLOG()
+
+def fletchingLongBow():
+    pause = 1
+    while pause:
+        if pyautogui.locateOnScreen(bank, confidence=0.5):
+            print("Encontrou a magia")
+            valor = pyautogui.locateOnScreen(bank, confidence=0.5)
+            valorCenter = pyautogui.center((valor[0], valor[1],valor[2], valor[3]))
+            print(valor)
+            print(valorCenter)
+            pyautogui.moveTo(valorCenter[0], valorCenter[1], 0.3, logScreenshot=False)
+            pyautogui.click()
+            time.sleep(1.0)
+
+            if pyautogui.locateOnScreen(bow, confidence=0.7):
+                valor = pyautogui.locateOnScreen(bow, confidence=0.7)
+                valorCenter = pyautogui.center((valor[0], valor[1],valor[2], valor[3]))
+                pyautogui.moveTo(valorCenter[0], valorCenter[1], 0.3, logScreenshot=False)
+                pyautogui.click()
+                time.sleep(1.0)
+                if pyautogui.locateOnScreen(yew, confidence=0.6):
+                    valor = pyautogui.locateOnScreen(yew, confidence=0.6)
+                    valorCenter = pyautogui.center((valor[0], valor[1],valor[2], valor[3]))
+                    pyautogui.moveTo(valorCenter[0], valorCenter[1], 0.3, logScreenshot=False)
+                    pyautogui.click()
+                    time.sleep(0.7)
+                    if pyautogui.locateOnScreen(close, confidence=0.8):
+                        valor = pyautogui.locateOnScreen(close, confidence=0.8)
+                        valorCenter = pyautogui.center((valor[0], valor[1],valor[2], valor[3]))
+                        print(valor)
+                        print(valorCenter)
+                        pyautogui.moveTo(valorCenter[0], valorCenter[1], 0.3, logScreenshot=False)
+                        pyautogui.click()
+                        time.sleep(1)
+                        if pyautogui.locateOnScreen(knif, confidence=0.7):
+                            valor = pyautogui.locateOnScreen(knif, confidence=0.7)
+                            valorCenter = pyautogui.center((valor[0], valor[1],valor[2], valor[3]))
+                            pyautogui.moveTo(valorCenter[0], valorCenter[1], 0.3, logScreenshot=False)
+                            pyautogui.click()
+                            time.sleep(0.7)
+                            if pyautogui.locateOnScreen(log, confidence=0.8):
+                                valor = pyautogui.locateOnScreen(log, confidence=0.8)
+                                valorCenter = pyautogui.center((valor[0], valor[1],valor[2], valor[3]))
+                                print(valor)
+                                print(valorCenter)
+                                pyautogui.moveTo(valorCenter[0], valorCenter[1], 0.3, logScreenshot=False)
+                                pyautogui.click()
+                                time.sleep(0.9)
+                                pyautogui.press('3')
+                                time.sleep(45)
+
+            else:
+                pause = 0
+        else:
+            print("Não encontrou os items")
+            pause = 0
+            time.sleep(0.7)
+
+def fletchingLongBowFULL():
+    pause = 1
+    while pause:
+        if pyautogui.locateOnScreen(bank, confidence=0.5):
+            print("Encontrou a magia")
+            valor = pyautogui.locateOnScreen(bank, confidence=0.5)
+            valorCenter = pyautogui.center((valor[0], valor[1],valor[2], valor[3]))
+            print(valor)
+            print(valorCenter)
+            pyautogui.moveTo(valorCenter[0], valorCenter[1], 0.3, logScreenshot=False)
+            pyautogui.click()
+            time.sleep(1.0)
+
+            if pyautogui.locateOnScreen(bowfull, confidence=0.9):
+                valor = pyautogui.locateOnScreen(bowfull, confidence=0.9)
+                valorCenter = pyautogui.center((valor[0], valor[1],valor[2], valor[3]))
+                pyautogui.moveTo(valorCenter[0], valorCenter[1], 0.3, logScreenshot=False)
+                pyautogui.click()
+                time.sleep(1.0)
+                if pyautogui.locateOnScreen(bow, confidence=0.7):
+                    valor = pyautogui.locateOnScreen(bow, confidence=0.7)
+                    valorCenter = pyautogui.center((valor[0], valor[1],valor[2], valor[3]))
+                    pyautogui.moveTo(valorCenter[0], valorCenter[1], 0.3, logScreenshot=False)
+                    pyautogui.click()
+                    time.sleep(0.7)
+                    if pyautogui.locateOnScreen(stringbow, confidence=0.9):
+                        valor = pyautogui.locateOnScreen(stringbow, confidence=0.9)
+                        valorCenter = pyautogui.center((valor[0], valor[1],valor[2], valor[3]))
+                        print(valor)
+                        print(valorCenter)
+                        pyautogui.moveTo(valorCenter[0], valorCenter[1], 0.3, logScreenshot=False)
+                        pyautogui.click()
+                        time.sleep(1)
+                        if pyautogui.locateOnScreen(close, confidence=0.8):
+                            valor = pyautogui.locateOnScreen(close, confidence=0.8)
+                            valorCenter = pyautogui.center((valor[0], valor[1],valor[2], valor[3]))
+                            print(valor)
+                            print(valorCenter)
+                            pyautogui.moveTo(valorCenter[0], valorCenter[1], 0.3, logScreenshot=False)
+                            pyautogui.click()
+                            time.sleep(1)
+                            if pyautogui.locateOnScreen(bow, confidence=0.7):
+                                valor = pyautogui.locateOnScreen(bow, confidence=0.7)
+                                valorCenter = pyautogui.center((valor[0], valor[1],valor[2], valor[3]))
+                                pyautogui.moveTo(valorCenter[0], valorCenter[1], 0.3, logScreenshot=False)
+                                pyautogui.click()
+                                time.sleep(0.7)
+                                if pyautogui.locateOnScreen(stringbow, confidence=0.8):
+                                    valor = pyautogui.locateOnScreen(stringbow, confidence=0.8)
+                                    valorCenter = pyautogui.center((valor[0], valor[1],valor[2], valor[3]))
+                                    print(valor)
+                                    print(valorCenter)
+                                    pyautogui.moveTo(valorCenter[0], valorCenter[1], 0.3, logScreenshot=False)
+                                    pyautogui.click()
+                                    time.sleep(1)
+                                    pyautogui.press('space')
+                                    time.sleep(20)
+
+
+            else:
+                pause = 0
+        else:
+            print("Não encontrou os items")
+            pause = 0
+            time.sleep(0.7)
+
+fletchingLongBow()
