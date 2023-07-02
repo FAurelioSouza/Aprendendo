@@ -186,7 +186,6 @@ def fletchingLOG():
             pause = 0
             time.sleep(0.7)
 
-
 def fletchingLongBow():
     pause = 1
     while pause:
