@@ -168,4 +168,4 @@ def fletchingLOG():
             pause = 0
             time.sleep(0.7)
 
-fletchingLOG()
+fletchingFeather()
