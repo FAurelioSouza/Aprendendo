@@ -1,0 +1,5 @@
+- Config:
+    client_title: Runelite
+    file_path_to_client: \.runelite\
+    pc_profile: C:\Users\lipex
+    enable_on_start: true
